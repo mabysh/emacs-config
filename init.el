@@ -6,6 +6,7 @@
 (require 'init-navigation)
 (require 'init-misc)
 (require 'init-company-mode)
+(require 'init-rust)
 
 (provide 'init)
 
