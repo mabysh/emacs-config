@@ -17,6 +17,5 @@
 (require 'init-session)
 (require 'init-dired)
 
-
 (provide 'init)
 
