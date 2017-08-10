@@ -43,5 +43,14 @@
 
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
 
+(defun mark-whole-line ()               
+    "Combinition of C-a, mark, C-e"
+    (interactive)
+    (move-beginning-of-line nil)
+    (set-mark-command nil)
+    (move-end-of-line nil)
+)
+(global-set-key (kbd "C-2") 'mark-whole-line) ; 2 is near w
+
 (provide 'init-editing)
 

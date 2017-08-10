@@ -7,6 +7,7 @@
 (require 'init-misc)
 (require 'init-company-mode)
 (require 'init-rust)
+(require 'init-session)
 
 (provide 'init)
 

@@ -11,7 +11,7 @@
 (when (fboundp 'scroll-bar-mode)
   (scroll-bar-mode -1))
 
-(set-face-attribute 'default nil :height 140)
+(set-face-attribute 'default nil :height 120)
 (setq-default line-spacing 0.4)
 
 (setq
@@ -23,7 +23,7 @@
 
 (load-theme 'atom-one-dark t)
 
-(blink-cursor-mode 0)
+;;(blink-cursor-mode 0)
 (setq-default cursor-type 'bar)
 (set-cursor-color "#cccccc")
 (setq ring-bell-function 'ignore)

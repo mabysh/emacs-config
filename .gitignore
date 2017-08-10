@@ -9,3 +9,5 @@ auto-save-list
 backups
 elpa/
 eshell
+.emacs.desktop
+.emacs.desktop.lock
