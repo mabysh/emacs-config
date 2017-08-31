@@ -29,6 +29,8 @@
 (set-cursor-color "#cccccc")
 (setq ring-bell-function 'ignore)
 
+(set-face-attribute 'default t :font "Iosevka Light")
+
 (golden-ratio-mode 1)
 
 (provide 'init-ui)

@@ -17,6 +17,7 @@
 (require 'init-session)
 (require 'init-eclim)
 (require 'init-dired)
+(require 'init-evil)
 
 (provide 'init)
 
