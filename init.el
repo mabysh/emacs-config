@@ -8,6 +8,7 @@
 (require 'init-company-mode)
 (require 'init-rust)
 (require 'init-session)
+(require 'init-eclim)
 
 (provide 'init)
 
