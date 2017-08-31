@@ -12,7 +12,8 @@
   (scroll-bar-mode -1))
 
 (set-face-attribute 'default nil :height 120)
-(setq-default line-spacing 0.4)
+;;(setq-default line-spacing 0.4)
+
 
 (setq
       x-select-enable-clipboard t
