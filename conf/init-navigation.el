@@ -1,4 +1,3 @@
-(require 'init-elpa)
 (require 'ido)
 (require 'recentf)
 (require-package 'ido-ubiquitous)
@@ -29,7 +28,7 @@
 ;; Enable move point from window to window using Shift and the arrow keys
 (windmove-default-keybindings)
 
-;;HELM
+;;===================================HELM=============================================
 (require-package 'helm)
 (require 'helm)
 ;; The default "C-x c" is quite close to "C-x C-c", which quits Emacs.
@@ -58,10 +57,9 @@
     (let ((ov (make-overlay (point-min) (point-max) nil nil t)))
       (overlay-put ov 'window (selected-window))
       (overlay-put ov 'face
-                   (let ((bg-color (face-background 'default nil)))
+                  (let ((bg-color (face-background 'default nil)))
                      `(:background ,bg-color :foreground ,bg-color)))
       (setq-local cursor-type nil))))
-
 
 (add-hook 'helm-minibuffer-set-up-hook
           'spacemacs//helm-hide-minibuffer-maybe)
@@ -81,7 +79,7 @@
 ;; use helm M-x
 (global-set-key (kbd "M-x") 'helm-M-x)
 ;; optional fuzzy matching for helm-M-x
-(setq helm-M-x-fuzzy-match t) 
+(setq helm-M-x-fuzzy-match t)
 
 ;; helm key ring
 (global-set-key (kbd "M-y") 'helm-show-kill-ring)
@@ -96,10 +94,52 @@
 
 ;;;HELM-locate
 (setq helm-locate-fuzzy-match t)
+(global-set-key (kbd "C-c l") 'helm-locate)
 
 ;;;HELM-semantic-imenu
 (setq helm-semantic-fuzzy-match t
       helm-imenu-fuzzy-match    t)
+(global-set-key (kbd "C-c i") 'helm-semantic-or-imenu)
+
+;;HELM-git project browsing only
+(require-package 'helm-ls-git)
+(require 'helm-ls-git)
+(global-set-key (kbd "C-x C-d") 'helm-browse-project)
+
+;;HELM-man pages
+(global-set-key (kbd "C-c m") 'helm-man-woman)
+(add-to-list 'helm-sources-using-default-as-input 'helm-source-man-pages)
+
+;;HELM find
+(global-set-key (kbd "C-c f") 'helm-find)
+
+;;HELM occur
+(global-set-key (kbd "C-c o") 'helm-occur)
+
+;;HELM-apropos
+(global-set-key (kbd "C-c a") 'helm-apropos)
+(setq helm-apropos-fuzzy-match t)
+
+;;HELM resume
+(global-set-key (kbd "C-c r") 'helm-resume)
+
+;;HELM mark ring
+(global-set-key (kbd "C-c SPC") 'helm-all-mark-rings) 
+
+;;HELM regexp
+(global-set-key (kbd "C-c r") 'helm-regexp) 
+
+;;HELM calculator
+(global-set-key (kbd "C-c C-,") 'helm-calcul-expression) 
+
+;;HELM projectile
+(require-package 'helm-projectile)
+;;HELM describe bindings
+(require-package 'helm-descbinds)
+(require 'helm-descbinds)
+(helm-descbinds-mode)
+
+;;================================AVY==================================
+(require-package 'avy)
 
 (provide 'init-navigation)
-
