@@ -4,9 +4,9 @@
 (require-package 'evil-leader)
 (require-package 'evil-surround)
 
-(global-evil-leader-mode)
-(global-evil-surround-mode)
 (evil-mode 1)
+(global-evil-leader-mode 1)
+(global-evil-surround-mode 1)
 
 ;; ibuffer must run with evil keys 
 (setq evil-emacs-state-modes (delq 'ibuffer-mode evil-emacs-state-modes))
