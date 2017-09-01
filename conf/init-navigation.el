@@ -76,22 +76,30 @@
   (if (boundp 'helm-alive-p)
       (symbol-value 'helm-alive-p)))
 
-(add-to-list 'golden-ratio-inhibit-functions 'pl/helm-alive-p)
+;;(add-to-list 'golden-ratio-inhibit-functions 'pl/helm-alive-p)
 
 ;; use helm M-x
 (global-set-key (kbd "M-x") 'helm-M-x)
 ;; optional fuzzy matching for helm-M-x
 (setq helm-M-x-fuzzy-match t) 
+
 ;; helm key ring
 (global-set-key (kbd "M-y") 'helm-show-kill-ring)
 
+;;HELM buffers
 (global-set-key (kbd "C-x b") 'helm-mini)
 (setq helm-buffers-fuzzy-matching t
       helm-recentf-fuzzy-match    t)
 
+;;HELM find files
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
 
+;;;HELM-locate
 (setq helm-locate-fuzzy-match t)
+
+;;;HELM-semantic-imenu
+(setq helm-semantic-fuzzy-match t
+      helm-imenu-fuzzy-match    t)
 
 (provide 'init-navigation)
 
